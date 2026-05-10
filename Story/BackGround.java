@@ -9,11 +9,19 @@ public class BackGround {
     }
 
     public void gameDisplay() {
-
-        System.out.println(".dP\"Y8 888888 88\"\"Yb 888888 .dP\"Y8 .dP\"Y8 88\"\"Yb    db    88b 88 8888b.  888888 8b    d8 88  dP\"\"b8");
-        System.out.println("`Ybo.\"   88   88__dP 88__   `Ybo.\" `Ybo.\" 88__dP   dPYb   88Yb88  8I  Yb 88__   88b  d88 88 dP   `\"");
-        System.out.println("o.`Y8b   88   88\"Yb  88\"\"   o.`Y8b o.`Y8b 88\"\"\"   dP__Yb  88 Y88  8I  dY 88\"\"   88YbdP88 88 Yb     ");
-        System.out.println("8bodP'   88   88  Yb 888888 8bodP' 8bodP' 88     dP\"\"\"\"\"Yb 88  Y8 8888Y\"  888888 88 YY 88 88  YboodP");
+        System.out.println("  ██████╗ ██╗   ██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ███╗   ██╗");
+        System.out.println("  ██╔══██╗██║   ██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗████╗  ██║");
+        System.out.println("  ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║");
+        System.out.println("  ██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║");
+        System.out.println("  ██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║");
+        System.out.println("  ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝");
+        System.out.println("                     ██████╗ ██╗   ██╗███████╗███████╗████████╗");
+        System.out.println("                     ██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝");
+        System.out.println("                     ██║   ██║██║   ██║█████╗  ███████╗   ██║   ");
+        System.out.println("                     ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   ");
+        System.out.println("                     ╚██████╔╝╚██████╔╝███████╗███████║   ██║   ");
+        System.out.println("                      ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   ");
+        System.out.println();
     }
 
     public void gameDisplay2(){
@@ -25,7 +33,7 @@ public class BackGround {
     }
 
 
-    public void Drow() {
+    public void DrowRanger() {
         control.dialogueWriter("Drow, a strong and determined individual, he knows pain and suffering.", 40);
         control.dialogueWriter("He likes challenges and is always up for a good fight.", 40);
         control.dialogueWriter("Deep inside, Drow has something others don't, the ability to endure.", 40);
