@@ -14,9 +14,9 @@ public class DrowRanger extends Character{
     public void displaySkills(){
         System.out.println();
         System.out.println("0. Basic getAttack(): Max Damage: " + getAttack() + " | Gain Energy: 30");
-        System.out.println("1. Skill 1(Blinding light): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 round");
-        System.out.println("2. SKill 2(Burning Punch): Max Damage: "+ (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 round");
-        System.out.println("3. Skill 3(Nonchalant stare): Max Damage: " + (getAttack() + 30) + " | Energy cost: 40 | Cooldown 3 rounds");
+        System.out.println("1. Skill 1(ArayMoPakak): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 round");
+        System.out.println("2. SKill 2(NakoPo!): Max Damage: "+ (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 round");
+        System.out.println("3. Skill 3(Markmanship): Max Damage: " + (getAttack() + 30) + " | Energy cost: 40 | Cooldown 3 rounds");
         System.out.println();
     }
 
@@ -41,7 +41,7 @@ public class DrowRanger extends Character{
 
         int dmg = rand.nextInt(10 - 5 + 1) + 5;
         setCurrentEnergy(getCurrentEnergy() - 30);
-        System.out.println(getName() + " used Blinding light! Damage is " + dmg);
+        System.out.println(getName() + " used ArayMoPakak! Damage is " + dmg);
         enemy.takeDamage(dmg + getAttack());
 
         setSKill1CD(2); // pila ang cooldown sa skill
@@ -60,7 +60,7 @@ public class DrowRanger extends Character{
 
         int dmg = rand.nextInt(20 - 15 + 1) + 15;
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used burning punch! Damage is " + dmg);
+        System.out.println(getName() + " used NakoPo! Damage is " + dmg);
         enemy.takeDamage(dmg + getAttack());
 
         setSKill2CD(3); // pila ang cooldown sa skill
@@ -79,7 +79,7 @@ public class DrowRanger extends Character{
 
         int dmg = rand.nextInt(30 - 20 + 1) + 20;
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used nonchalant stare! Damage is " + dmg);
+        System.out.println(getName() + " used Markmanship! Damage is " + dmg);
         enemy.takeDamage(dmg);
 
         setSKill3CD(3); // pila ang cooldown sa skill

@@ -11,9 +11,9 @@ public class Elf extends Character {
     public void displaySkills(){
     System.out.println();
     System.out.println("0. Basic Attack: Max Damage: " + getAttack() + " | Gain Energy: 30");
-    System.out.println("1. Skill 1(Face reality): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 rounds");
-    System.out.println("2. SKill 2(words of encouragement): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
-    System.out.println("3. Skill 3(Intense pressure): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
+    System.out.println("1. Skill 1(yearner): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 rounds");
+    System.out.println("2. SKill 2(whycantbeme?): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
+    System.out.println("3. Skill 3(kabalomasakitan): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
     System.out.println();
     }
 
@@ -38,7 +38,7 @@ public class Elf extends Character {
 
         int dmg = rand.nextInt(10 - 5 + 1) + 5;
         setCurrentEnergy(getCurrentEnergy() - 30);
-        System.out.println(getName() + " used face reality. Damage is " + dmg);
+        System.out.println(getName() + " used yearner. Damage is " + dmg);
         enemy.takeDamage(dmg + getAttack());
 
         setSKill1CD(2);
@@ -57,7 +57,7 @@ public class Elf extends Character {
 
         int dmg = rand.nextInt(20 - 15 + 1) + 15;
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used words of encouragement! Damage is " + dmg);
+        System.out.println(getName() + " used whycantbeme?! Damage is " + dmg);
         enemy.takeDamage(dmg + getAttack());
 
         setSKill2CD(3);
@@ -76,7 +76,7 @@ public class Elf extends Character {
 
         int dmg = rand.nextInt(20 - 15 + 1) + 15;
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used intese pressure! Damage is " + dmg);
+        System.out.println(getName() + " used kabalomasakitan! Damage is " + dmg);
         enemy.takeDamage(dmg + getAttack());
 
         setSKill3CD(3);

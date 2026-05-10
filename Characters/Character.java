@@ -16,16 +16,16 @@ public abstract class Character {
     private int attack;
     private int level;
     private int exp;
-    private double money = 10;
-    private int hotDog;
-    private int riceToppings;
-    private int water;
-    private int mountainDew;
+    private double gold = 10;
+    private int tanggo;
+    private int clarity;
+    private int bottle;
+    private int HealingSalve;
     private int skill1CD;
     private int skill2CD;
     private int skill3CD;
 
-    public Character(String name, int hp, int energy, int attack, int level, int exp, double money, int skill1CD, int skill2CD, int skill3CD) {
+    public Character(String name, int hp, int energy, int attack, int level, int exp, double gold, int skill1CD, int skill2CD, int skill3CD) {
         this.name = name;
         this.currentHp = hp;
         this.maxHp = hp;
@@ -34,7 +34,7 @@ public abstract class Character {
         this.attack = attack;
         this.level = 1;
         this.exp = 0;
-        this.money = money;
+        this.gold = gold;
         this.skill1CD = skill1CD;
         this.skill2CD = skill2CD;
         this.skill3CD = skill3CD;
@@ -85,52 +85,53 @@ public abstract class Character {
         currentHp = Math.min(maxHp, currentHp + 15);
         
     }
-    public void addMoney(double amount){
-        this.money += amount;
+    public void addGold(double amount){
+        this.gold += amount;
     }
-    public void useMoney(double amount){
-        this.money -= amount;
-    }
-
-    // ---
-
-    // --- canteen og items ---
-    public void addHotDog(int amount){
-        this.hotDog += amount;
-    }
-    public void addRiceToppings(int amount){
-        this.riceToppings += amount;
-    }
-    public void addWater(int amount){
-        this.water += amount;
-    }
-    public void addMountainDew(int amount){
-        this.mountainDew += amount;
+    public void useGold(double amount){
+        this.gold -= amount;
     }
 
-    public void useHotDog(){
+   
+
+    
+    public void addTanggo(int amount){
+        this.tanggo += amount;
+    }
+
+    public void addBottle(int amount){
+        this.bottle += amount;
+    }
+    public void addClarity(int amount){
+        this.clarity += amount;
+    }
+    public void addHealingSalve(int amount){
+        this.HealingSalve += amount;
+    }
+
+    public void useTanggo(){
         heal(20);
-        this.hotDog -= 1;
-        System.out.println(name + " consumed hot dog, +20 HP" );
+        this.tanggo -= 1;
+        System.out.println(name + " consumed tanggo, +20 HP" );
     }
-    public void useRiceTopping(){
+    public void useClarity(){
         heal(30);
-        this.riceToppings -= 1;
-        System.out.println(name + " consumed rice Topping, +20 HP" );
+        this.clarity -= 1;
+        System.out.println(name + " consumed clarity, +30 HP" );
     }
-    public void useWater(){
+    public void useBottle(){
         addEnergy(15);
-        this.water -= 1;
-        System.out.println(name + " consumed water, +20 energy" );
+        this.bottle -= 1;
+        System.out.println(name + " consumed bottle, +20 energy" );
     }
-    public void useMountainDew(){
-        addEnergy(30);
-        this.mountainDew -= 1;
-        System.out.println(name + " consumed mountain dew, +30 energy" );
+    public void useHealingSalve(){
+        heal(50);
+        this.HealingSalve -= 1;
+        System.out.println(name + " consumed healing salve, +50 HP" );
     }
 
 
-    //--
+    
 
     public String getName() { 
         return name; 
@@ -151,9 +152,9 @@ public abstract class Character {
         return exp; 
     }
 
-    //Getters for money and items kay private sila then wala ka create og getters 
-    public double getMoney(){
-        return money;
+    //Getters for gold and items kay private sila then wala ka create og getters 
+    public double getGold(){
+        return gold;
     }
 
     public int getMaxEnergy() {
@@ -168,17 +169,17 @@ public abstract class Character {
         this.currentEnergy = currentEnergy;
     }
 
-    public int getHotDog(){
-        return hotDog;
+    public int getTanggo(){
+        return tanggo;
     }
-    public int getRiceToppings(){
-        return riceToppings;
+    public int getClarity(){
+        return clarity;
     }
-    public int getWater(){
-        return water;
+    public int getBottle(){
+        return bottle;
     }
-    public int getMountainDew(){
-        return mountainDew;
+    public int getHealingSalve(){
+        return HealingSalve;
     }
 
 
@@ -197,7 +198,7 @@ public abstract class Character {
         DecimalFormat df = new DecimalFormat("##,##0.00");
 
         System.out.println(name + " - HP: " + currentHp +  "/" + maxHp + " | Energy: " + currentEnergy + "/" + maxEnergy +
-        " | level: " + level + " | exp: " + exp + " | Money: PHP " + df.format(money));
+        " | level: " + level + " | exp: " + exp + " | Gold: PHP " + df.format(gold));
 
     }
 
