@@ -3,7 +3,6 @@ import java.util.*;
 
 import Engine.Start;
 import Enemies.Enemy;
-import Enemies.Minion;
 import Characters.Drow;       
 import Characters.Elf;        
 import Characters.Dragonborn; 
@@ -164,7 +163,7 @@ public class WorldController {
         dialogueWriter("\nA figure stands before the gate to the inner sanctum.", textDelay);
         dialogueWriter("GUARDIAN: \"None pass the Overgrowth without the scent of blood on their blade.\"", textDelay);
         
-        Enemy guard = new Minion("Overgrowth Guardian", 80, 10, 15);
+        Enemy guard = new Enemy("Overgrowth Guardian", 80, 10, 15);
         start.Battle(guard);
 
         dialogueWriter("\nPast the gate, an Elf warden waits, her bow aimed at the darkness.", textDelay);
@@ -199,7 +198,7 @@ public class WorldController {
         dialogueWriter("\nIn the heart of the forge, you find a Dragonborn warrior encased in cursed obsidian.", textDelay);
         dialogueWriter("Lord Uganggar, the Forge-Master, stands between you and the prisoner.", textDelay);
 
-        Enemy uganggar = new Minion("Lord Uganggar", 200, 20, 35);
+        Enemy uganggar = new Enemy("Lord Uganggar", 200, 20, 35);
         start.Battle(uganggar);
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
@@ -232,7 +231,7 @@ public class WorldController {
         dialogueWriter("\nThe final chamber glows with a cold, blue light. Khairos, the Grand Architect, awaits.", textDelay);
         dialogueWriter("Khairos: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
 
-        Enemy khairos = new Minion("Grand Architect Khairos", 300, 35, 50);
+        Enemy khairos = new Enemy("Grand Architect Khairos", 300, 35, 50);
         start.Battle(khairos);
 
         dialogueWriter("\nKhairos fades into the mist. \"The descent is complete. You have mastered the Infinite.\"", 80);
