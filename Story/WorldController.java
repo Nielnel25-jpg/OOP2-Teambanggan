@@ -3,11 +3,10 @@ import java.util.*;
 
 import Engine.Core;
 import Enemies.Enemy;
-import Enemies.Minion;
+import Enemies.Monster;
 import Characters.DrowRanger;
 import Characters.Elf;        
 import Characters.DragonBorn; 
-import System.printWorld;
 
 public class WorldController {
     Scanner scanner = new Scanner(System.in);
@@ -98,9 +97,9 @@ public class WorldController {
 
         boolean playAgain = true;
         while (playAgain) {
-            start.getParty().clear();
+            core.getParty().clear();
     
-            start.getParty().add(new DrowRanger()); 
+            core.getParty().add(new DrowRanger()); 
             world1();
             world2();
             world3();
@@ -119,7 +118,7 @@ public class WorldController {
 
                     if (choice.equalsIgnoreCase("Y")) {
                         dialogueWriter("Re-igniting the torch. New dangers await...", textDelay);
-                        this.start = new Start(); 
+                        this.core = new Core(); 
                         this.bg = new BackGround(this); 
                         this.currentWorld = 1; 
                         break; 
@@ -164,12 +163,12 @@ public class WorldController {
         dialogueWriter("\nA figure stands before the gate to the inner sanctum.", textDelay);
         dialogueWriter("GUARDIAN: \"None pass the Overgrowth without the scent of blood on their blade.\"", textDelay);
         
-        Enemy guard = new Enemy("Overgrowth Guardian", 80, 10, 15);
-        start.Battle(guard);
+        Enemy guard = new Monster("Overgrowth Guardian", 80, 10, 15);
+        core.Battle(guard);
 
         dialogueWriter("\nPast the gate, an Elf warden waits, her bow aimed at the darkness.", textDelay);
         dialogueWriter("═══ The Elf joins your party! ═══", textDelay);
-        start.getParty().add(new Elf());
+        core.getParty().add(new Elf());
     }
 
     private void world2() { 
@@ -186,25 +185,25 @@ public class WorldController {
             String s = scanner.next().trim().toUpperCase();
             if (s.equals("A")) {
                 dialogueWriter("A Flame-Atronach erupts from the seal!", textDelay);
-                start.Battle(new Enemy("Flame Atronach", 50, 9, 11));
+                core.Battle(new Monster("Flame Atronach", 50, 9, 11));
                 r = true;
             } else if (s.equals("B")) {
                 dialogueWriter("You choose the safe path, though the riches behind the door remain a mystery.", textDelay);
                 r = true;
-            } else if (s.equals("C")) { start.explore(); }
-            else if (s.equals("D")) { start.rest(); }
-            else if (s.equals("E")) { start.canteen(); }
+            } else if (s.equals("C")) { core.explore(); }
+            else if (s.equals("D")) { core.rest(); }
+            else if (s.equals("E")) { core.canteen(); }
         } while(!r);
 
         dialogueWriter("\nIn the heart of the forge, you find a Dragonborn warrior encased in cursed obsidian.", textDelay);
         dialogueWriter("Lord Uganggar, the Forge-Master, stands between you and the prisoner.", textDelay);
 
-        Enemy uganggar = new Enemy("Lord Uganggar", 200, 20, 35);
-        start.Battle(uganggar);
+        Enemy uganggar = new Monster("Lord Uganggar", 200, 20, 35);
+        core.Battle(uganggar);
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
         dialogueWriter("=== The Dragonborn joins your party! ===", textDelay);
-        start.getParty().add(new DragonBorn());
+        core.getParty().add(new DragonBorn());
     }
 
     private void world3() {
@@ -232,8 +231,8 @@ public class WorldController {
         dialogueWriter("\nThe final chamber glows with a cold, blue light. Khairos, the Grand Architect, awaits.", textDelay);
         dialogueWriter("Khairos: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
 
-        Enemy khairos = new Enemy("Grand Architect Khairos", 300, 35, 50);
-        start.Battle(khairos);
+        Enemy khairos = new Monster("Grand Architect Khairos", 300, 35, 50);
+        core.Battle(khairos);
 
         dialogueWriter("\nKhairos fades into the mist. \"The descent is complete. You have mastered the Infinite.\"", 80);
     }
