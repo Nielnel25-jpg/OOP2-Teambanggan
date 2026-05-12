@@ -4,9 +4,9 @@ import java.util.*;
 import Engine.Start;
 import Enemies.Enemy;
 import Enemies.Minion;
-import Characters.Drow;       
+import Characters.DrowRanger;
 import Characters.Elf;        
-import Characters.Dragonborn; 
+import Characters.DragonBorn; 
 import System.printWorld;
 
 public class WorldController {
@@ -83,9 +83,9 @@ public class WorldController {
 
             char pick = in.charAt(0);
             switch (pick) {
-                case 'A': bg.Drow(); break;
+                case 'A': bg.DrowRanger(); break;
                 case 'B': bg.Elf(); break;
-                case 'C': bg.Dragonborn(); break;
+                case 'C': bg.DragonBorn(); break;
                 case 'D': reading = false; break;
                 default: System.out.println("Invalid choice.");
             }
@@ -100,7 +100,7 @@ public class WorldController {
         while (playAgain) {
             start.getParty().clear();
     
-            start.getParty().add(new Drow()); 
+            start.getParty().add(new DrowRanger()); 
             world1();
             world2();
             world3();
@@ -204,7 +204,7 @@ public class WorldController {
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
         dialogueWriter("=== The Dragonborn joins your party! ===", textDelay);
-        start.getParty().add(new Dragonborn());
+        start.getParty().add(new DragonBorn());
     }
 
     private void world3() {
