@@ -185,7 +185,7 @@ public class WorldController {
             String s = scanner.next().trim().toUpperCase();
             if (s.equals("A")) {
                 dialogueWriter("A Flame-Atronach erupts from the seal!", textDelay);
-                start.Battle(new Minion("Flame Atronach", 50, 9, 11));
+                start.Battle(new Enemy("Flame Atronach", 50, 9, 11));
                 r = true;
             } else if (s.equals("B")) {
                 dialogueWriter("You choose the safe path, though the riches behind the door remain a mystery.", textDelay);
