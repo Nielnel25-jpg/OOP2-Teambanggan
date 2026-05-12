@@ -34,7 +34,7 @@ public class BackGround {
 
 
     public void DrowRanger() {
-        control.dialogueWriter("Drow, a strong and determined individual, he knows pain and suffering.", 40);
+        control.dialogueWriter("DrowRanger, a strong and determined individual, he knows pain and suffering.", 40);
         control.dialogueWriter("He likes challenges and is always up for a good fight.", 40);
         control.dialogueWriter("Deep inside, Drow has something others don't, the ability to endure.", 40);
     }
