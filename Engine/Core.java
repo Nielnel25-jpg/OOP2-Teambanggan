@@ -12,7 +12,7 @@ import Characters.Elf;
 import Enemies.Enemy;
 import Enemies.Monster;
 
-public class Game {
+public class Core {
     private Scanner sc = new Scanner(System.in);
     private Random rand = new Random();
     private DecimalFormat df = new DecimalFormat("##,##0.00");
@@ -21,7 +21,7 @@ public class Game {
     protected boolean exitGame = false;
     private int currentFighterIndex = 0;
 
-    public Game() {
+    public Core() {
         party = new ArrayList<>();
         party.add(new DrowRanger());
     }
@@ -101,60 +101,7 @@ public class Game {
 }
 
 
-    /* 
-    public void explore(){
-        System.out.println("\nYou venture into the area...");
-        int chance = rand.nextInt(100);
 
-        if(chance < 60){
-            Enemy enemy = new Monster("Skeleton", 80, 10, 15);
-            System.out.println("A wild " + enemy.getName() + " appeared!");
-            boolean won = Battle(enemy);
-
-            if (won) {
-                System.out.println("You survived this encounter.");
-            } else {
-                System.out.println("You were defeated...");
-                exitGame = true;
-            }
-        } else {
-            System.out.println("You found nothing interesting. It’s peaceful here...");
-        }
-
-        System.out.println("\n");
-        System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                     WORLD                            ║");
-        System.out.println("╠══════════════════════════════════════════════════════╣");
-        System.out.println("║  [1] Continue Exploring                              ║");
-        System.out.println("║  [2] Return to Main Menu                             ║");
-        System.out.println("╚══════════════════════════════════════════════════════╝");
-        
-        int next = -1;
-        boolean validNext = false;
-
-        while(!validNext){
-            try{
-                System.out.print(" > Choose an option: ");
-                next = sc.nextInt();
-
-                if(next != 1 && next != 2){
-                    System.out.println("Invalid Option! Try again!");
-                    validNext = false;
-                }else {
-                    validNext = true;
-                }
-            }catch(Exception e){
-                System.out.println("Invalid Option! Try again!");
-                sc.next();
-            }
-        }
-
-        if(next == 1){
-            explore();
-        }
-    }
-
-*/
 
     //Battle
     public void Battle(Enemy enemy){
