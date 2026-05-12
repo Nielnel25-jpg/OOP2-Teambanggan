@@ -82,9 +82,9 @@ public class WorldController {
 
             char pick = in.charAt(0);
             switch (pick) {
-                case 'A': bg.Drow(); break;
+                case 'A': bg.DrowRanger(); break;
                 case 'B': bg.Elf(); break;
-                case 'C': bg.Dragonborn(); break;
+                case 'C': bg.DragonBorn(); break;
                 case 'D': reading = false; break;
                 default: System.out.println("Invalid choice.");
             }
@@ -203,7 +203,7 @@ public class WorldController {
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
         dialogueWriter("=== The Dragonborn joins your party! ===", textDelay);
-        start.getParty().add(new Dragonborn());
+        start.getParty().add(new DragonBorn());
     }
 
     private void world3() {
