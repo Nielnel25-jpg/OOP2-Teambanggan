@@ -360,28 +360,33 @@ public class Core {
         else System.out.println("Not enough of that item!");
     }
 
-//canteen
-    public void canteen() {
+//store
+    public void merchant() {
         Character c = getCurrentCharacter();
 
         int tanggoPrice = 80;
         int bottlePrice = 125;
         int clarityPrice = 85;
 
+        System.out.println("MYSTIC PEDDLER: \"Ah, traveler! Care to browse my wares?\"");
+
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                       CANTEEN                        ║");
+        System.out.println("║                    MYSTIC PEDDLER                    ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
-        System.out.println("  Money: PHP " + df.format(c.getGold()));
+        System.out.println("  Gold: $ " + df.format(c.getGold()));
         System.out.println("  [1] Tanggo - $ " + tanggoPrice);
         System.out.println("  [2] Bottle - $ " +  bottlePrice);
         System.out.println("  [3] Clarity - $ " + clarityPrice);
-        System.out.println("  [0] Exit Canteen");
+        System.out.println("  [0] Exit Store");
         System.out.println("╚══════════════════════════════════════════════════════╝");
         
         int choice = -1;
         System.out.print(" > Choose an option: ");
         try { choice = Integer.parseInt(sc.nextLine()); } catch (Exception e) { return; }
-        if (choice == 0) return;
+        if (choice == 0) {
+            System.out.println("MYSITC PEDDLER: \"Until our paths cross again...\"");
+            return;
+        };
 
         System.out.print(" > Enter quantity: ");
         int quantity = -1;
@@ -397,9 +402,9 @@ public class Core {
             else if (choice == 2) c.addBottle(quantity);
             else if (choice == 3) c.addClarity(quantity);
             c.useGold(price);
-            System.out.println("Purchase successful!");
+            System.out.println("MYSTIC PEDDLER: \"Pleasure doing business with you.\"");
         } else {
-            System.out.println("Not enough money!");
+            System.out.println("Not enough gold!");
         }
     }
 
