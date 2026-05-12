@@ -26,7 +26,7 @@ public class Core {
         party.add(new DrowRanger());
     }
 
-    public ArrayList<Character> getPart(){
+    public ArrayList<Character> getParty(){
         return party;
     }
 
