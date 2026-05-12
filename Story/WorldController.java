@@ -3,7 +3,8 @@ import java.util.*;
 
 import Engine.Start;
 import Enemies.Enemy;
-import Characters.DrowRanger;       
+import Enemies.Minion;
+import Characters.DrowRanger;
 import Characters.Elf;        
 import Characters.DragonBorn; 
 import System.printWorld;
@@ -99,7 +100,7 @@ public class WorldController {
         while (playAgain) {
             start.getParty().clear();
     
-            start.getParty().add(new Drow()); 
+            start.getParty().add(new DrowRanger()); 
             world1();
             world2();
             world3();
