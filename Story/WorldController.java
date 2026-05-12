@@ -1,7 +1,7 @@
 package Story;
 import java.util.*;
 
-import Engine.Start;
+import Engine.Core;
 import Enemies.Enemy;
 import Enemies.Minion;
 import Characters.DrowRanger;
@@ -11,7 +11,7 @@ import System.printWorld;
 
 public class WorldController {
     Scanner scanner = new Scanner(System.in);
-    private Start start;
+    private Core core;
     protected BackGround bg;
 
     protected int currentWorld = 1; 
@@ -19,8 +19,8 @@ public class WorldController {
 
     private int textDelay = 30;
 
-    public WorldController(Start start) {
-        this.start = start;
+    public WorldController(Core core) {
+        this.core = core;
         this.bg = new BackGround(this);
     }
 
