@@ -14,7 +14,7 @@ public class WorldController {
     protected BackGround bg;
 
     protected int currentWorld = 1; 
-    protected printWorld pw = new printWorld(); 
+    protected PrintWorld pw = new PrintWorld(); 
 
     private int textDelay = 30;
 
