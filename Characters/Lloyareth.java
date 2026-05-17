@@ -1,20 +1,22 @@
 package Characters;
-
 import Enemies.Enemy;
+import java.io.*;
 
-public class DrowRanger extends Character{
+public class Lloyareth extends Character{
+
     
-    public DrowRanger(){
-        super("DrowRanger", 120, 40, 20, 1, 0, 50, 0, 0, 0);
+    public Lloyareth(){
+        super("DrowRanger", 120, 40, 20, 1, 30, 50, 0, 0, 0);
     }
 
     @Override
     public void displaySkills(){
         System.out.println();
-        System.out.println("0. Basic getAttack(): Max Damage: " + getAttack() + " | Gain Energy: 30");
+        System.out.println("0. Basic Attack(): Max Damage: " + getAttack() + " | Gain Energy: 30");
         System.out.println("1. Skill 1(ArayMoPakak): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 round");
         System.out.println("2. SKill 2(NakoPo!): Max Damage: "+ (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 round");
         System.out.println("3. Skill 3(Markmanship): Max Damage: " + (getAttack() + 30) + " | Energy cost: 40 | Cooldown 3 rounds");
+        System.out.println("4. Ultimate(KeyChain): Max Damage:" + (getAttack() + 50) + " | Energy cost: 50 | Cooldown 4 rounds");
         System.out.println();
     }
 
@@ -81,6 +83,33 @@ public class DrowRanger extends Character{
         enemy.takeDamage(dmg);
 
         setSKill3CD(3); // pila ang cooldown sa skill
+    }
+
+    @Override
+    public void useUltimate(Enemy enemy) {
+        if(getUltimate() > 0) {
+            System.out.println("Ultimate on cooldown! Wait" + getUltimate() + " turn(s).");
+            return;
+        }
+        if(getCurrentEnergy() < 50){
+            System.out.println("Not enough energy for KEY CHAIN! (needs 50) ");
+            return;
+        }
+        int dmg = rand.nextInt(21) + 30;
+        setCurrentEnergy((getCurrentEnergy() - 50));
+
+          System.out.println("  🏹 " + getName() + " unleashes FROST ARROW STORM! 🏹");
+
+         int   totalDmg = 0;
+          for(int i = 1 ; i <= 3 ; i++ ) {
+            int arrowDmg = rand.nextInt(26) + getAttack();
+            System.out.println();
+            enemy.takeDamage(arrowDmg);
+            totalDmg = arrowDmg;
+          }
+           System.out.println("  Total damage dealt: " + totalDmg);
+ 
+        setUltimate(5);
     }
 
 }

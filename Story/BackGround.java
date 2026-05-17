@@ -33,15 +33,15 @@ public class BackGround {
     }
 
 
-    public void DrowRanger() {
-        control.dialogueWriter("DrowRanger, a strong and determined individual, he knows pain and suffering.", 40);
+    public void Lloyareth() {
+        control.dialogueWriter("Lloyareth, a strong and determined individual, he knows pain and suffering.", 40);
         control.dialogueWriter("He likes challenges and is always up for a good fight.", 40);
         control.dialogueWriter("Deep inside, Drow has something others don't, the ability to endure.", 40);
     }
 
    
-    public void Elf() {
-        control.dialogueWriter("Elf is the definition of chill and hardworking, he knows when to get serious and when to relax.", 40);
+    public void Milarion() {
+        control.dialogueWriter("Milarion is the definition of chill and hardworking, he knows when to get serious and when to relax.", 40);
         control.dialogueWriter("He likes to listen to music and enjoy the simple things in life.", 40);
         control.dialogueWriter("He was given the alias \"kabalomasakitan\" by his tribe.", 40);
     }

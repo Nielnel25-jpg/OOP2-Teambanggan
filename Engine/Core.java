@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 import Characters.Character;
 import Characters.DragonBorn;
-import Characters.DrowRanger;
-import Characters.Elf;
+import Characters.Lloyareth;
+import Characters.Milarion;
 import Enemies.Enemy;
 import Enemies.Monster;
 
@@ -23,6 +23,7 @@ public class Core {
 
     public Core() {
         party = new ArrayList<>();
+        party.add(new Lloyareth());
     }
 
     public ArrayList<Character> getParty(){
