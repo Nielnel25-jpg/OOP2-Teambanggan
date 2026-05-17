@@ -211,23 +211,91 @@ public class WorldController {
         dialogueWriter("\n=== FLOOR 3: THE ABYSSAL TIDES ===", textDelay);
         dialogueWriter("The fellowship enters the drowned floors. The silence is crushing.", textDelay);
 
-        dialogueWriter("\nAn ancient specter of a scholar blocks the hallway.", textDelay);
-        dialogueWriter("SPECTER: \"To know the deep, one must know the soul. What governs a fellowship?\"", textDelay);
-        dialogueWriter("A. Unyielding Law\nB. Pure Understanding", textDelay);
-
-        boolean riddleDone = false;
-        while (!riddleDone) {
-            System.out.print(" > ");
-            String s = scanner.next().trim().toUpperCase();
-            if (s.equals("A")) {
-                dialogueWriter("SPECTER: \"A rigid blade breaks easily.\"", textDelay);
-                riddleDone = true;
-            } else if (s.equals("B")) {
-                dialogueWriter("SPECTER: \"Correct. Understanding models the world.\"", textDelay);
-                riddleDone = true;
-            }
+        dialogueWriter("Water seeps through every crack in the stone. The torchlight bends and wavers as if the dark itself is breathing.", textDelay);
+ 
+    dialogueWriter("\nAn ancient specter of a scholar blocks the hallway.", textDelay);
+    dialogueWriter("Its robes drift like kelp in a current that does not exist.", textDelay);
+    dialogueWriter("SPECTER: \"You have descended far, wanderers. But the Abyssal Tides answer to no blade.\"", textDelay);
+    dialogueWriter("SPECTER: \"I was a keeper of this floor once. Now I am its prisoner — bound until one worthy enough passes through.\"", textDelay);
+    dialogueWriter("SPECTER: \"Answer my riddles, and the path to Khairos opens. Fail... and you join me in the dark.\"", textDelay);
+ 
+ 
+    dialogueWriter("\nSPECTER: \"Riddle the first —", textDelay);
+    dialogueWriter("I have cities, but no houses live there.", textDelay);
+    dialogueWriter("I have mountains, but no trees grow there.", textDelay);
+    dialogueWriter("I have water, but no fish swim there.", textDelay);
+    dialogueWriter("I have roads, but no cars travel there. What am I?\"", textDelay);
+    System.out.println("  [A] A dream");
+    System.out.println("  [B] A map");
+    System.out.println("  [C] A painting");
+    System.out.print(" > ");
+ 
+    boolean riddleFailed = false;
+    String r1 = scanner.nextLine().trim().toUpperCase();
+    if (!r1.equals("B")) {
+        dialogueWriter("SPECTER: \"Incorrect. You mistake illusion for truth — a fatal flaw in the deep.\"", textDelay);
+        riddleFailed = true;
+    } else {
+        dialogueWriter("SPECTER: \"A map. Yes... you understand that a thing can be real without being alive.\"", textDelay);
+    }
+ 
+  
+    if (!riddleFailed) {
+        dialogueWriter("\nSPECTER: \"Riddle the second —", textDelay);
+        dialogueWriter("The more you take, the more you leave behind. What am I?\"", textDelay);
+        System.out.println("  [A] Time");
+        System.out.println("  [B] Footsteps");
+        System.out.println("  [C] Memories");
+        System.out.print(" > ");
+ 
+        String r2 = scanner.nextLine().trim().toUpperCase();
+        if (!r2.equals("B")) {
+            dialogueWriter("SPECTER: \"Wrong. You walk the path but do not see what you leave behind.\"", textDelay);
+            dialogueWriter("SPECTER: \"In the Abyss, what you forget still follows you.\"", textDelay);
+            riddleFailed = true;
+        } else {
+            dialogueWriter("SPECTER: \"Footsteps. The ground remembers every step — long after the one who walked it is gone.\"", textDelay);
         }
+    }
+ 
+    
+    if (!riddleFailed) { 
+        dialogueWriter("\nSPECTER: \"Riddle the third — a torment that outlives the flesh —", textDelay); 
+        dialogueWriter("I am a star you can see but can never reach.", textDelay); 
+        dialogueWriter("I live in your thoughts all day, yet I do not know your name.", textDelay); 
+        dialogueWriter("The closer I get, the faster your heart beats; the farther I stay, the more it aches. What am I?\"", textDelay); 
+        System.out.println("  [A] A ghost"); 
+        System.out.println("  [B] A crush"); 
+        System.out.println("  [C] A shadow"); 
+        System.out.print(" > "); 
 
+        String r3 = scanner.nextLine().trim().toUpperCase(); 
+        if (!r3.equals("B")) { 
+            dialogueWriter("SPECTER: \"Incorrect. You know nothing of the true horrors of the deep.\"", textDelay); 
+            dialogueWriter("SPECTER: \"Mas sakit pa ni sa dungeon boss, brah... ang makita siyang malipayon sa kamot sa uban.\"", textDelay); 
+            riddleFailed = true; 
+        } else { 
+            dialogueWriter("SPECTER: \"Isang sulyap, isang ngiti... isang pag-asang kailanman ay hindi magiging akin.\"", textDelay); 
+            dialogueWriter("SPECTER: \"Akala ko baon sa limot ang aking nakaraan... ngunit hanggang sa kawalan, siya pa rin ang aking pinapangarap.\"", textDelay); 
+        } 
+    }
+ 
+    if (riddleFailed) {
+        dialogueWriter("\nThe specter's form fractures — patience spent, wrath unleashed.", textDelay);
+        dialogueWriter("SPECTER: \"Then you will not pass. You will not leave.\"", textDelay);
+        core.Battle(new Monster("Hollow Specter", 90, 12, 18));
+ 
+        if (core.getCurrentCharacter().isAlive()) {
+            dialogueWriter("The specter dissolves with a hollow wail, its chains finally broken by force rather than wisdom.", textDelay);
+            dialogueWriter("The path ahead opens — but the victory tastes of nothing.", textDelay);
+        }
+    } else {
+        dialogueWriter("\nThe specter goes still. For a long moment, nothing moves.", textDelay);
+        dialogueWriter("SPECTER: \"Correct. Understanding models the world.\"", textDelay);
+        dialogueWriter("SPECTER: \"A rigid blade breaks easily. But a mind that bends... that is what survives the deep.\"", textDelay);
+        dialogueWriter("Its form unravels slowly, thread by thread, like smoke in rising water.", textDelay);
+        dialogueWriter("The hallway beyond it glows with a cold, blue light.", textDelay);
+    }
         dialogueWriter("\nThe final chamber glows with a cold, blue light. Khairos, the Grand Architect, awaits.", textDelay);
         dialogueWriter("Khairos: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
 
