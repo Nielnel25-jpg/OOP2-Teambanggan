@@ -16,7 +16,7 @@ public class WorldController {
     protected int currentWorld = 1; 
     protected PrintWorld pw = new PrintWorld(); 
 
-    private int textDelay = 30;
+    private int textDelay = 2;
 
     public WorldController(Core core) {
         this.core = core;
