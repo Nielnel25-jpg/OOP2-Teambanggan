@@ -24,6 +24,7 @@ public abstract class Character {
     private int skill1CD;
     private int skill2CD;
     private int skill3CD;
+    private int ultimate;
 
     public Character(String name, int hp, int energy, int attack, int level, int exp, double gold, int skill1CD, int skill2CD, int skill3CD) {
         this.name = name;
@@ -38,9 +39,22 @@ public abstract class Character {
         this.skill1CD = skill1CD;
         this.skill2CD = skill2CD;
         this.skill3CD = skill3CD;
+        this.ultimate = ultimate;
+        
     }
 
     // player stats
+
+    public Character(String string, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s,
+            int t) {
+    }
+
+    public void setUltimate(int ultimate){
+        this.ultimate = ultimate;
+    }
+    public int getUltimate(){
+        return ultimate;
+    }
 
     public int getDamage(){
         return attack;
@@ -230,6 +244,9 @@ public abstract class Character {
     public abstract void useSkill1(Enemy enemy);
     public abstract void useSkill2(Enemy enemy);
     public abstract void useSkill3(Enemy enemy);
+    public abstract void useUltimate(Enemy enemy);
+
+    
 
 }
 
