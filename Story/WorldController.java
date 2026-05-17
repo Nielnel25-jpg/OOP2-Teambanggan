@@ -70,8 +70,8 @@ public class WorldController {
             System.out.println("╔══════════════════════════════════════════════════════╗");
             System.out.println("║                 THE FELLOWSHIP ROSTER                ║");
             System.out.println("╠══════════════════════════════════════════════════════╣");
-            System.out.println("║  [A] The DrowRanger (Shadow-Striker)                 ║");
-            System.out.println("║  [B] The Elf (Warden of Wilds)                       ║");                
+            System.out.println("║  [A] Lloyareth (DrowRanger)                          ║");
+            System.out.println("║  [B] Milarion (Elf)                                  ║");                
             System.out.println("║  [C] The Dragonborn (Scale-Shield)                   ║");                
             System.out.println("║  [D] Return to Camp                                  ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
@@ -82,8 +82,8 @@ public class WorldController {
 
             char pick = in.charAt(0);
             switch (pick) {
-                case 'A': bg.DrowRanger(); break;
-                case 'B': bg.Elf(); break;
+                case 'A': bg.Lloyareth(); break;
+                case 'B': bg.Milarion(); break;
                 case 'C': bg.DragonBorn(); break;
                 case 'D': reading = false; break;
                 default: System.out.println("Invalid choice.");
@@ -140,7 +140,7 @@ public class WorldController {
     private void world1() {
         currentWorld = 1;
         dialogueWriter("=== FLOOR 1: THE SUNLESS OVERGROWTH ===", textDelay);
-        dialogueWriter("The DrowRanger tightens his leather armor as the damp air of the Sunless Overgrowth fills his lungs.", textDelay);
+        dialogueWriter("Lloyareth tightens his leather armor as the damp air of the Sunless Overgrowth fills his lungs.", textDelay);
         dialogueWriter("Remnants of a forgotten age twist around him. Only steel on stone will guide the way.", textDelay);
 
         dialogueWriter("\nA wounded traveler lies amidst the bioluminescent vines.", textDelay);
@@ -166,8 +166,8 @@ public class WorldController {
         Enemy guard = new Monster("Overgrowth Guardian", 80, 10, 15);
         core.Battle(guard);
 
-        dialogueWriter("\nPast the gate, an Elf warden waits, her bow aimed at the darkness.", textDelay);
-        dialogueWriter("═══ The Elf joins your party! ═══", textDelay);
+        dialogueWriter("\nPast the gate, Milarion waits, his bow aimed at the darkness.", textDelay);
+        dialogueWriter("═══ The Milarion joins your party! ═══", textDelay);
         core.getParty().add(new Milarion());
     }
 
