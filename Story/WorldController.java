@@ -4,8 +4,8 @@ import java.util.*;
 import Engine.Core;
 import Enemies.Enemy;
 import Enemies.Monster;
-import Characters.DrowRanger;
-import Characters.Elf;        
+import Characters.Lloyareth;
+import Characters.Milarion;        
 import Characters.DragonBorn; 
 
 public class WorldController {
@@ -99,7 +99,7 @@ public class WorldController {
         while (playAgain) {
             core.getParty().clear();
     
-            core.getParty().add(new DrowRanger()); 
+            core.getParty().add(new Lloyareth()); 
             world1();
             world2();
             world3();
@@ -168,7 +168,7 @@ public class WorldController {
 
         dialogueWriter("\nPast the gate, an Elf warden waits, her bow aimed at the darkness.", textDelay);
         dialogueWriter("═══ The Elf joins your party! ═══", textDelay);
-        core.getParty().add(new Elf());
+        core.getParty().add(new Milarion());
     }
 
     private void world2() { 
