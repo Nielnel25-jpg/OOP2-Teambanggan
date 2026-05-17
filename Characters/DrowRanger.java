@@ -1,13 +1,11 @@
 package Characters;
-import java.util.Random;
 
 import Enemies.Enemy;
 
 public class DrowRanger extends Character{
-    private Random rand = new Random();
     
     public DrowRanger(){
-        super("DrowRanger", 120, 40, 20, 1, 30, 50, 0, 0, 0);
+        super("DrowRanger", 120, 40, 20, 1, 0, 50, 0, 0, 0);
     }
 
     @Override

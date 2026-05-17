@@ -23,7 +23,6 @@ public class Core {
 
     public Core() {
         party = new ArrayList<>();
-        party.add(new DrowRanger());
     }
 
     public ArrayList<Character> getParty(){
