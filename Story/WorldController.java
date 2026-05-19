@@ -1,17 +1,16 @@
 package Story;
-import java.util.*;
-
-import Engine.Core;
+import Characters.DragonBorn;
+import Characters.Lloyareth;
+import Characters.Milarion;
 import Enemies.Enemy;
 import Enemies.Monster;
-import Characters.Lloyareth;
-import Characters.Milarion;        
-import Characters.DragonBorn; 
-
+import Engine.Core;
+import java.util.*; 
 public class WorldController {
     Scanner scanner = new Scanner(System.in);
     private Core core;
     protected BackGround bg;
+    private boolean deserterSeen = false;
 
     protected int currentWorld = 1; 
     protected PrintWorld pw = new PrintWorld(); 
@@ -180,7 +179,7 @@ public class WorldController {
         boolean r = false;
         do {
             dialogueWriter("\nA sealed vault sits to your left, heat radiating from the door.", textDelay);
-            dialogueWriter("A. Breach the vault\nB. Continue the descent\nC. Explore surroundings\nD. Rest by the lava-hearth\nE. Scavenge for supplies", textDelay);
+            dialogueWriter("A. Breach the vault\nB. Continue the descent\nC. Explore surroundings\nD. Rest by the lava-hearth\nE. Scavenge for supplies\nF. Investigate the shadowy figure\n", textDelay);
             System.out.print(" > ");
             String s = scanner.next().trim().toUpperCase();
             if (s.equals("A")) {
@@ -193,6 +192,7 @@ public class WorldController {
             } else if (s.equals("C")) { core.explore(); }
             else if (s.equals("D")) { core.rest(); }
             else if (s.equals("E")) { core.merchant(); }
+            else if (s.equals("F")) { sideQuestDeserter(); }
         } while(!r);
 
         dialogueWriter("\nIn the heart of the forge, you find a Dragonborn warrior encased in cursed obsidian.", textDelay);
@@ -316,4 +316,56 @@ public class WorldController {
         }
         System.out.println();
     }
+    private void sideQuestDeserter() {
+    if (deserterSeen) {
+        dialogueWriter("The alcove is empty now.", textDelay);
+        return;
+    }
+    deserterSeen = true;
+ 
+    dialogueWriter("\nA figure crouches behind a collapsed forge wall.", textDelay);
+    dialogueWriter("He wears Uganggar's insignia — cracked and scorched.", textDelay);
+    dialogueWriter("DESERTER: \"I'm not your enemy. I left Uganggar's guard three days ago.\"", textDelay);
+    dialogueWriter("DESERTER: \"I know how he fights. That's worth something, isn't it?\"", textDelay);
+ 
+    System.out.println("\n[A] Bribe him (PHP 80)");
+    System.out.println("[B] Threaten him");
+    System.out.println("[C] Leave him alone");
+    System.out.print(" > ");
+ 
+    Characters.Character active = core.getCurrentCharacter();
+    String choice = scanner.next().trim().toUpperCase();
+ 
+    switch (choice) {
+        case "A":
+            if (active.getGold() < 80.0) {
+                dialogueWriter("Not enough gold. He shrugs and says nothing.", textDelay);
+                break;
+            }
+            active.useGold(80.0);
+            dialogueWriter("He pockets the coin.", textDelay);
+            dialogueWriter("DESERTER: \"Uganggar's left guard drops after his third hit. Every time. Use it.\"", textDelay);
+            dialogueWriter("He tosses you a forge salve before disappearing into the dark.", textDelay);
+            for (Characters.Character c : core.getParty()) {
+                if (c.isAlive()) { c.heal(30); c.addEnergy(20); }
+            }
+            System.out.println("  Party healed: +30 HP, +20 Energy");
+            break;
+ 
+        case "B":
+            dialogueWriter("DESERTER: \"I didn't survive Uganggar to be pushed around by you.\"", textDelay);
+            dialogueWriter("He grabs a forge pick and lunges.", textDelay);
+            core.Battle(new Monster("Forge Deserter", 55, 8, 13));
+            if (core.getCurrentCharacter().isAlive()) {
+                dialogueWriter("DESERTER: \"...fine. His left guard drops after the third hit. Happy now?\"", textDelay);
+            }
+            break;
+ 
+        case "C":
+        default:
+            dialogueWriter("You leave him where he sits. He watches you go in silence.", textDelay);
+            break;
+    }
+}
+ 
 }
