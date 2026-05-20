@@ -1,9 +1,8 @@
 package Engine;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
 
 import Characters.Character;
 import Characters.DragonBorn;

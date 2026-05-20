@@ -8,6 +8,13 @@ import java.text.DecimalFormat;
 public abstract class Character {
     Random rand = new Random();
 
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String CYAN = "\u001B[36m";
+
     private String name;
     private int currentHp;
     private int maxHp;
@@ -42,13 +49,6 @@ public abstract class Character {
         this.ultimate = ultimate;
         
     }
-
-    // player stats
-
-    public Character(String string, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s,
-            int t) {
-    }
-
     public void setUltimate(int ultimate){
         this.ultimate = ultimate;
     }
@@ -89,7 +89,7 @@ public abstract class Character {
         maxHp += 10;
         currentHp = maxHp;
         attack += 5;
-        System.out.println(getName() + " Leveled up!");
+        System.out.println(getName() + " Leveled up!" + RESET);
         currentEnergy = maxEnergy;
         exp -= 50;
     }
@@ -126,17 +126,17 @@ public abstract class Character {
     public void useTanggo(){
         heal(20);
         this.tanggo -= 1;
-        System.out.println(name + " consumed tanggo, +20 HP" );
+        System.out.println(name + " consumed tanggo, "+ GREEN + "+20 HP" + RESET );
     }
     public void useClarity(){
         heal(30);
         this.clarity -= 1;
-        System.out.println(name + " consumed clarity, +30 HP" );
+        System.out.println(name + " consumed clarity, " + GREEN + "+30 HP" + RESET);
     }
     public void useBottle(){
         addEnergy(15);
         this.bottle -= 1;
-        System.out.println(name + " consumed bottle, +20 energy" );
+        System.out.println(name + " consumed bottle, " + BLUE + "+15 energy" + RESET);
     }
     public void useHealingSalve(){
         heal(50);
@@ -198,21 +198,21 @@ public abstract class Character {
 
 
     public void showStats(){
-        System.out.println("\n╔══════════════════════════════════════════════════════╗");
-        System.out.println("  " + name + "'s' Stats ");
+        System.out.println(CYAN + "\n╔══════════════════════════════════════════════════════╗");
+        System.out.println("  " + name + "'s Stats ");
         System.out.println("  Level : " + level);
         System.out.println("  Exp   : " + getExp()+ "/50");
-        System.out.println("  HP    : " + currentHp + "/" + maxHp);
-        System.out.println("  Energy: " + currentEnergy + "/" + maxEnergy);
-        System.out.println("╚══════════════════════════════════════════════════════╝");
+        System.out.println("  HP    : " + GREEN + currentHp + RESET + CYAN + "/" + GREEN + maxHp + RESET);
+        System.out.println("  Energy: " + BLUE + currentEnergy + RESET + CYAN + "/" + BLUE + maxEnergy + RESET);
+        System.out.println("╚══════════════════════════════════════════════════════╝" + CYAN);
 
     }
 
     public void displayStatus(){
         DecimalFormat df = new DecimalFormat("##,##0.00");
 
-        System.out.println(name + " - HP: " + currentHp +  "/" + maxHp + " | Energy: " + currentEnergy + "/" + maxEnergy +
-        " | level: " + level + " | exp: " + exp + " | Gold: PHP " + df.format(gold));
+        System.out.println(CYAN + name + RESET + " - HP: " + GREEN + currentHp +  "/" + maxHp + RESET + " | Energy: " + BLUE + currentEnergy + "/" + maxEnergy + RESET +
+        " | level: " + level + " | exp: " + exp + " | Gold: " + YELLOW + "PHP " + df.format(gold) + RESET);
 
     }
 
