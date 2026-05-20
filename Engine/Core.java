@@ -36,72 +36,61 @@ public class Core {
 
     //exploration
     public void explore() {
+        System.out.println("\nYou venture into the area...");
 
-        boolean exploring = true;
+        int chance = rand.nextInt(100);
+        if (chance < 60) { // 60% chance encounter
+            Enemy enemy = new Monster();
+            System.out.println("A wild " + enemy.getName() + " appeared!");
+            boolean won = Battle(enemy);
 
-        while (exploring && !exitGame) {
-            System.out.println("\nYou venture into the area...");
-            int chance = rand.nextInt(100);
-
-            if (chance < 60) {
-                Enemy enemy = new Monster("Skeleton", 80, 10, 15);
-                System.out.println("A wild " + enemy.getName() + " appeared!");
-                // bakbakan naa!!
-                Battle(enemy);
-            
-                boolean anyAlive = false;
-                for (Character c : party) {
-                    if (c.isAlive()) {
-                        anyAlive = true;
-                        break;
-                    }
-                }
-                if (anyAlive) {
-                    System.out.println("You survived this encounter.");
-                } else {
-                    System.out.println("You were defeated...");
-                    exitGame = true;
-                    break;
-                }
+            if (won) {
+                System.out.println("You survived this encounter.");
             } else {
-                System.out.println("You found nothing interesting. It’s peaceful here...");
+                System.out.println("You were defeated...");
+                exitGame = true;
             }
+        } else {
+            System.out.println("You found nothing interesting. It’s peaceful here...");
+        }
 
-            System.out.println("\n");
-            System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║                      WORLD                           ║");
-            System.out.println("╠══════════════════════════════════════════════════════╣");
-            System.out.println("║  [1] Continue Exploring                              ║");
-            System.out.println("║  [2] Return to Main Menu                             ║");
-            System.out.println("╚══════════════════════════════════════════════════════╝");
+        System.out.println("\n");
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║                     WORLD                            ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║  [1] Continue Exploring                              ║");
+        System.out.println("║  [2] Return to Main Menu                             ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+        
+        int next = -1;
+        boolean validNext = false;
 
-            boolean validNext = false;
+        while(!validNext){
+            try{
+                System.out.print(" > Choose an option: ");
+                next = sc.nextInt();
 
-            while (!validNext) {
-                try {
-                    System.out.print(" > Choose an option: ");
-                    int next = sc.nextInt();
-
-                    if (next == 1) {
-                        validNext = true;
-                    } else if (next == 2) {
-                        validNext = true;
-                        exploring = false;
-                    } else {
-                        System.out.println("Invalid Option! Try again!");
-                    }
-
-                } catch (Exception e) {
+                if(next != 1 && next != 2){
                     System.out.println("Invalid Option! Try again!");
-                    sc.nextLine();
+                    validNext = false;
+                }else {
+                    validNext = true;
                 }
+            }catch(Exception e){
+                 System.out.println("Invalid Option! Try again!");
+                sc.next();
             }
         }
+
+        if(next == 1){
+            explore();;
+        }
+
     }
 
 
     //Battle
-    public void Battle(Enemy enemy){
+    public boolean Battle(Enemy enemy){
         System.out.println("\n");
         System.out.println("╔══════════════════════════════════════════════════════╗");
         System.out.println("║                    BATTLE START                      ║");
@@ -109,14 +98,17 @@ public class Core {
         System.out.println("   Enemy: " + enemy.getName() + "                             ");
         System.out.println("╚══════════════════════════════════════════════════════╝");        
 
-        while(true){
-            Character activeCharacter = party.get(currentFighterIndex);
+        boolean battleOngoing = true;
 
-            if(!activeCharacter.isAlive()){
-                System.out.println(activeCharacter.getName() + " is down! Switching to next alive member...");
+        while(battleOngoing){
+            Character activeChar = party.get(currentFighterIndex);
+
+            if(!activeChar.isAlive()){
+                System.out.println(activeChar.getName() + " is down! Switching to next alive member...");
                 boolean switched = false;
+
                 for(int i = 0; i < party.size(); i++){
-                    if(party.get(i).isAlive()) {
+                    if(party.get(i).isAlive()){
                         currentFighterIndex = i;
                         switched = true;
                         break;
@@ -124,73 +116,69 @@ public class Core {
                 }
                 if(!switched){
                     System.out.println("All party members defeated!");
-                    System.out.println("GAME OVER!");
-                    break;
+                    return false;
                 }
-                activeCharacter = party.get(currentFighterIndex);
+                activeChar = party.get(currentFighterIndex);
             }
 
-            // paras player
             if(enemy.isAlive()){
-                showCharacterMenu(activeCharacter, enemy);
+                showCharacterMenu(activeChar, enemy);
             }
 
-            //if patay na kalaban
-            if (!enemy.isAlive()) {
+            if(!enemy.isAlive()){
                 double reward = rand.nextDouble() * (50 - 30) + 30;
-                activeCharacter.addGold(reward);
+                activeChar.addGold(reward);
                 int exp  = rand.nextInt(21) + 30;
-                activeCharacter.addExp(exp);
-
-                System.out.println("\nEnemy defeated! \nGained " + exp + " EXP and PHP " + df.format(reward));
-
-                activeCharacter.addEnergy(activeCharacter.getMaxEnergy()); // everytime maka daog kay mo reset ang energy
-                activeCharacter.heal(activeCharacter.getMaxHp()); // everytime maka daog kay mo reset ang hp
-
-                if(activeCharacter.getExp() >= 50){
-                    activeCharacter.levelUp();
-                }
-                activeCharacter.setSKill1CD(0);
-                activeCharacter.setSKill2CD(0);
-                activeCharacter.setSKill3CD(0);
+                activeChar.addExp(exp);
+                System.out.println("\nEnemy defeated! Gained " + exp + " EXP and PHP " + df.format(reward));
+                activeChar.addEnergy(activeChar.getMaxEnergy()); // everytime maka daog kay mo reset ang energy
                 
-                break;
+                activeChar.heal(activeChar.getMaxHp()); // everytime maka daog kay mo reset ang hp
+                if(activeChar.getExp() >= 50){
+                    activeChar.levelUp();
+                }
+                activeChar.setSKill1CD(0);
+                activeChar.setSKill2CD(0);
+                activeChar.setSKill3CD(0);
+                battleOngoing = false;
+                continue; // skip enemy's turn
             }
 
-            if (enemy.isAlive()) {
+            if(enemy.isAlive()){
                 System.out.println("╔══════════════════════════════════════════════════════╗");
                 System.out.println("   " + enemy.getName() + "'s Turn                             ");
 
-                //prints line for name boundary something something
                 String name = enemy.getName();
                 System.out.print("   ");
                 for(int i = 0; i < name.length(); i++){
                     System.out.print("═");
                 }
-                System.out.println(); //para mo ubos lolz
+                System.out.println();
 
                 System.out.println("   HP: " + enemy.getHp() + "                                              ");
                 System.out.println("╠══════════════════════════════════════════════════════╣");
-
                 int dmg = enemy.attack();
-                activeCharacter.takeDamage(dmg);
-                System.out.println("   " + activeCharacter.getName() + " took " + dmg + " damage!                               ");
+                activeChar.takeDamage(dmg);
+                System.out.println("   " + activeChar.getName() + " took " + dmg + " damage!                               ");
                 System.out.println("╚══════════════════════════════════════════════════════╝");
             }
 
             boolean anyAlive = false;
-            for (Character c : party) {
-                if (c.isAlive()) {
+            for(Character c : party){
+                if(c.isAlive()){
                     anyAlive = true;
                     break;
                 }
             }
-            if (!anyAlive) {
+
+            if(!anyAlive){
                 System.out.println("All party members defeated!");
-                System.out.println("GAME OVER!");
-                break;
-            }            
+                System.exit(0);
+            }
+           
         }
+        
+        return true;
     }
 
     //character Menu
