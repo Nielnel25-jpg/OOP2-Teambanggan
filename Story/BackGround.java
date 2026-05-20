@@ -2,6 +2,13 @@ package Story;
 
 public class BackGround {
 
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String CYAN = "\u001B[36m";
+
     private WorldController control;
 
     public BackGround(WorldController control) {
@@ -9,18 +16,19 @@ public class BackGround {
     }
 
     public void gameDisplay() {
-        System.out.println("  ██████╗ ██╗   ██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ███╗   ██╗");
-        System.out.println("  ██╔══██╗██║   ██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗████╗  ██║");
-        System.out.println("  ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║");
-        System.out.println("  ██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║");
-        System.out.println("  ██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║");
-        System.out.println("  ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝");
-        System.out.println("                     ██████╗ ██╗   ██╗███████╗███████╗████████╗");
-        System.out.println("                     ██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝");
-        System.out.println("                     ██║   ██║██║   ██║█████╗  ███████╗   ██║   ");
-        System.out.println("                     ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   ");
-        System.out.println("                     ╚██████╔╝╚██████╔╝███████╗███████║   ██║   ");
-        System.out.println("                      ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   ");
+        System.out.println("\n"+ RED);
+        System.out.println("                        \t██████╗ ██╗   ██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ███╗   ██╗" + RED);
+        System.out.println("                        \t██╔══██╗██║   ██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗████╗  ██║" + RED);
+        System.out.println("                        \t██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║" + RED);
+        System.out.println("                        \t██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║" + RED);
+        System.out.println("                        \t██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║" + RED);
+        System.out.println("                        \t╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝" + RED);
+        System.out.println("                                           \t██████╗ ██╗   ██╗███████╗███████╗████████╗" + RED);
+        System.out.println("                                           \t██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝" + RED);
+        System.out.println("                                           \t██║   ██║██║   ██║█████╗  ███████╗   ██║   " + RED);
+        System.out.println("                                           \t██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   " + RED);
+        System.out.println("                                           \t╚██████╔╝╚██████╔╝███████╗███████║   ██║   " + RED);
+        System.out.println("                                             \t ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   " + RED);
         System.out.println();
     }
 

@@ -8,6 +8,14 @@ import Engine.Core;
 import java.util.*; 
 public class WorldController {
     Scanner scanner = new Scanner(System.in);
+
+
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String CYAN = "\u001B[36m";
     private Core core;
     protected BackGround bg;
     private boolean deserterSeen = false;
@@ -25,15 +33,15 @@ public class WorldController {
     private void mainMenu() {
         boolean running = true;
         while (running) {
-            System.out.println("\n");
-            System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║            REALMS OF THE INFINITE DESCENT            ║");
-            System.out.println("╠══════════════════════════════════════════════════════╣");
-            System.out.println("║  A. Enter the Labyrinth                              ║");
-            System.out.println("║  B. Read the Ancient Chronicles (Lore)               ║");
-            System.out.println("║  C. Abandon the Quest                                ║");
-            System.out.println("╚══════════════════════════════════════════════════════╝");
-            System.out.print(" > Choose your path: ");
+            System.out.println("\n" + CYAN);
+            System.out.println("╔══════════════════════════════════════════════════════╗" + CYAN);
+            System.out.println("║            REALMS OF THE INFINITE DESCENT            ║" + CYAN);
+            System.out.println("╠══════════════════════════════════════════════════════╣" + CYAN);
+            System.out.println("║  A. Enter the Labyrinth                              ║" + CYAN);
+            System.out.println("║  B. Read the Ancient Chronicles (Lore)               ║" + CYAN);
+            System.out.println("║  C. Abandon the Quest                                ║" + CYAN);
+            System.out.println("╚══════════════════════════════════════════════════════╝" + CYAN);
+            System.out.print(" > Choose your path: " + GREEN);
 
             String input = scanner.next().trim().toUpperCase();
 

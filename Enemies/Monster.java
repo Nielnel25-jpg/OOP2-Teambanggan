@@ -7,7 +7,7 @@ public class Monster extends Enemy {
         super("Dungeon Creature", 50, 7, 15);
     }
 
-    // Named enemy for story encounters
+    
     public Monster(String name, int hp, int minDamage, int maxDamage) {
         super(name, hp, minDamage, maxDamage);
     }
