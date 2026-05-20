@@ -5,7 +5,7 @@ public class DragonBorn extends Character{
     
 
     public DragonBorn(){
-        super("DragonBorn", 110, 70, 13, 1, 0, 10, 0, 0, 0, 0, 0, 0);
+        super("DragonBorn", 110, 70, 13, 1, 0, 10, 0,0,0);
     }
 
     @Override
