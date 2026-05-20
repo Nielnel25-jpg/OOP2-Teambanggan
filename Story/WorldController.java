@@ -239,7 +239,7 @@ public class WorldController {
     System.out.print(" > ");
  
     boolean riddleFailed = false;
-    String r1 = scanner.nextLine().trim().toUpperCase();
+    String r1 = scanner.next().trim().toUpperCase();
     if (!r1.equals("B")) {
         dialogueWriter("SPECTER: \"Incorrect. You mistake illusion for truth — a fatal flaw in the deep.\"", textDelay);
         riddleFailed = true;
@@ -256,7 +256,7 @@ public class WorldController {
         System.out.println("  [C] Memories");
         System.out.print(" > ");
  
-        String r2 = scanner.nextLine().trim().toUpperCase();
+        String r2 = scanner.next().trim().toUpperCase();
         if (!r2.equals("B")) {
             dialogueWriter("SPECTER: \"Wrong. You walk the path but do not see what you leave behind.\"", textDelay);
             dialogueWriter("SPECTER: \"In the Abyss, what you forget still follows you.\"", textDelay);
@@ -277,7 +277,7 @@ public class WorldController {
         System.out.println("  [C] A shadow"); 
         System.out.print(" > "); 
 
-        String r3 = scanner.nextLine().trim().toUpperCase(); 
+        String r3 = scanner.next().trim().toUpperCase(); 
         if (!r3.equals("B")) { 
             dialogueWriter("SPECTER: \"Incorrect. You know nothing of the true horrors of the deep.\"", textDelay); 
             dialogueWriter("SPECTER: \"Mas sakit pa ni sa dungeon boss, brah... ang makita siyang malipayon sa kamot sa uban.\"", textDelay); 
