@@ -6,7 +6,7 @@ public class Lloyareth extends Character{
 
     
     public Lloyareth(){
-        super("DrowRanger", 120, 40, 20, 1, 30, 50, 0, 0, 0);
+        super("Lloyareth", 120, 40, 20, 1, 30, 50, 0, 0, 0);
     }
 
     @Override

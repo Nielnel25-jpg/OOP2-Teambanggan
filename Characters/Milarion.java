@@ -4,7 +4,7 @@ import Enemies.Enemy;
 public class Milarion extends Character {
 
     public Milarion(){
-        super("Elf", 250, 70, 5, 1, 0, 10, 0, 0, 0, 0,0,0);
+        super("Milarion", 250, 70, 5, 1, 0, 10, 0, 0, 0);
     }
 
     @Override
