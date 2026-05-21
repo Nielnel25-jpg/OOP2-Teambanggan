@@ -6,7 +6,7 @@ public class Lloyareth extends Character{
 
     
     public Lloyareth(){
-        super("Lloyareth", 120, 40, 20, 1, 30, 50, 0, 0, 0);
+        super("Lloyareth", 120, 40, 20, 1, 30, 50, 0, 0, 0,0);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Lloyareth extends Character{
         System.out.println("1. Skill 1(ArayMoPakak): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 round");
         System.out.println("2. SKill 2(NakoPo!): Max Damage: "+ (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 round");
         System.out.println("3. Skill 3(Markmanship): Max Damage: " + (getAttack() + 30) + " | Energy cost: 40 | Cooldown 3 rounds");
-        System.out.println("4. Ultimate(KeyChain): Max Damage:" + (getAttack() + 50) + " | Energy cost: 50 | Cooldown 4 rounds");
+        System.out.println("4. Ultimate(KeyChain): Max Damage:" + (getAttack() + 50) + " | Energy cost: 50 | Cooldown 5 rounds");
         System.out.println();
     }
 

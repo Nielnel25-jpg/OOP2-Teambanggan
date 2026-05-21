@@ -5,17 +5,17 @@ public class DragonBorn extends Character{
     
 
     public DragonBorn(){
-        super("DragonBorn", 110, 70, 13, 1, 0, 10, 0,0,0);
+        super("DragonBorn", 110, 70, 13, 1, 0, 10, 0,0,0,0);
     }
 
     @Override
     public void displaySkills(){
     System.out.println();
     System.out.println("0. Basic Attack(): Max Damage: " + getAttack() + " | Gain Energy: 30");
-    System.out.println("1. Skill 1(Sleep): Max Damage: " + (getAttack() + 15) + " | Energy cost: 30 | Cooldown 2 round");
-    System.out.println("2. SKill 2(Bite): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 round");
+    System.out.println("1. Skill 1(Sleep): Max Damage: " + (getAttack() + 15) + " | Energy cost: 30 | Cooldown 2 rounds");
+    System.out.println("2. SKill 2(Bite): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
     System.out.println("3. Skill 3(Slash): Max Damage: " + (getAttack() + 30) + " | Energy cost: 20 | Cooldown 3 rounds");
-    System.out.println("4. Ultimate(KeyChain): Max Damage:" + (getAttack() + 40) + " | Energy cost: 50 | Cooldown 4 rounds");
+    System.out.println("4. Ultimate(Sinaw): Max Damage:" + (getAttack() + 40) + " | Energy cost: 50 | Cooldown 5 rounds");
     System.out.println();
     }
 
@@ -102,13 +102,8 @@ public class DragonBorn extends Character{
  
         enemy.takeDamage(dmg + getAttack());
  
-
-        setSKill1CD(0);
-        setSKill2CD(0);
-        setSKill3CD(0);
-        setUltimate(5);
+        setUltimate(3);
     }
-
 }
 
 
