@@ -89,6 +89,11 @@ public class Milarion extends Character {
             System.out.println("Ultimate on cooldown! Wait" + getUltimate()+ " turn(s).");
             return;
         }
+        
+        if(getCurrentEnergy() < 50){
+            System.out.println("Not enough energy for KEY CHAIN! (needs 50) ");
+            return;
+        }
 
         int dmg = rand.nextInt(21) + 30;
         setCurrentEnergy(getCurrentEnergy() - 50);
@@ -98,6 +103,7 @@ public class Milarion extends Character {
         enemy.takeDamage(dmg + getAttack());
 
         heal(40);
+
         setUltimate(5);
 
     }
