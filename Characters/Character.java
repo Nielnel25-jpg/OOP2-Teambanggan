@@ -82,7 +82,7 @@ public abstract class Character {
         currentHp = maxHp;
         attack += 5;
         System.out.println(getName() + " Leveled up!");
-        maxEnergy += 10;
+        maxEnergy = Math.min(100, maxEnergy + 10);
         currentEnergy = maxEnergy;
         exp -= 50;
     }
