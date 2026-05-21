@@ -1,15 +1,11 @@
 package Engine;
 
-import java.text.DecimalFormat;
-import java.util.*;
-
-
 import Characters.Character;
-import Characters.DragonBorn;
 import Characters.Lloyareth;
-import Characters.Milarion;
 import Enemies.Enemy;
 import Enemies.Monster;
+import java.text.DecimalFormat;
+import java.util.*;
 
 public class Core {
     private Scanner sc = new Scanner(System.in);
@@ -357,7 +353,7 @@ public class Core {
         System.out.println("  [1] Tanggo - $ " + tanggoPrice);
         System.out.println("  [2] Bottle - $ " +  bottlePrice);
         System.out.println("  [3] Clarity - $ " + clarityPrice);
-        System.out.println("  [4] Clarity - $ " + clarityPrice);
+        System.out.println("  [4] Healing Salve - $ " + healingSalvePrice);
         System.out.println("  [0] Exit Store");
         System.out.println("╚══════════════════════════════════════════════════════╝");
         
