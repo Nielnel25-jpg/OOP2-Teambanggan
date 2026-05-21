@@ -1,0 +1,5 @@
+# Ignore all compiled Java class files
+*.class
+
+# Optional: Ignore bluej or IDE project files if they pop up
+*.ctxt
