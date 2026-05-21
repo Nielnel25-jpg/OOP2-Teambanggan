@@ -9,7 +9,7 @@ import Characters.DragonBorn;
 import Characters.Lloyareth;
 import Characters.Milarion;
 import Enemies.Enemy;
-import Enemies.Monster;
+
 
 public class Core {
     private Scanner sc = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class Core {
 
         int chance = rand.nextInt(100);
         if (chance < 60) { // 60% chance encounter
-            Enemy enemy = new Monster();
+            Enemy enemy = new Enemy("Dungeon Creature", 50, 7, 15);
             System.out.println("A wild " + enemy.getName() + " appeared!");
             boolean won = Battle(enemy);
 

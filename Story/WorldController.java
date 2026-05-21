@@ -3,7 +3,6 @@ import Characters.DragonBorn;
 import Characters.Lloyareth;
 import Characters.Milarion;
 import Enemies.Enemy;
-import Enemies.Monster;
 import Engine.Core;
 import java.util.*; 
 public class WorldController {
@@ -164,7 +163,7 @@ public class WorldController {
         dialogueWriter("\nA figure stands before the gate to the inner sanctum.", textDelay);
         dialogueWriter("GUARDIAN: \"None pass the Overgrowth without the scent of blood on their blade.\"", textDelay);
         
-        Enemy guard = new Monster("Overgrowth Guardian", 80, 10, 15);
+        Enemy guard = new Enemy("Overgrowth Guardian", 80, 10, 15);
         core.Battle(guard);
 
         dialogueWriter("\nPast the gate, Milarion waits, his bow aimed at the darkness.", textDelay);
@@ -186,7 +185,7 @@ public class WorldController {
             String s = scanner.next().trim().toUpperCase();
             if (s.equals("A")) {
                 dialogueWriter("A Flame-Atronach erupts from the seal!", textDelay);
-                core.Battle(new Monster("Flame Atronach", 50, 9, 11));
+                core.Battle(new Enemy("Flame Atronach", 50, 9, 11));
                 r = true;
             } else if (s.equals("B")) {
                 dialogueWriter("You choose the safe path, though the riches behind the door remain a mystery.", textDelay);
@@ -200,7 +199,7 @@ public class WorldController {
         dialogueWriter("\nIn the heart of the forge, you find a Dragonborn warrior encased in cursed obsidian.", textDelay);
         dialogueWriter("Lord Omcmize, the Forge-Master, stands between you and the prisoner.", textDelay);
 
-        Enemy Omcmize = new Monster("Lord Omcmize", 200, 20, 35);
+        Enemy Omcmize = new Enemy("Lord Omcmize", 200, 20, 35);
         core.Battle(Omcmize);
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
@@ -285,7 +284,7 @@ public class WorldController {
     if (riddleFailed) {
         dialogueWriter("\nThe specter's form fractures — patience spent, wrath unleashed.", textDelay);
         dialogueWriter("SPECTER: \"Then you will not pass. You will not leave.\"", textDelay);
-        core.Battle(new Monster("Hollow Specter", 90, 12, 18));
+        core.Battle(new Enemy("Hollow Specter", 90, 12, 18));
  
         if (core.getCurrentCharacter().isAlive()) {
             dialogueWriter("The specter dissolves with a hollow wail, its chains finally broken by force rather than wisdom.", textDelay);
@@ -301,7 +300,7 @@ public class WorldController {
         dialogueWriter("\nThe final chamber glows with a cold, blue light. Frederick, the Grand Regeant, awaits.", textDelay);
         dialogueWriter("Frederick: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
 
-        Enemy Frederick = new Monster("Grand Regeant Frederick", 300, 35, 50);
+        Enemy Frederick = new Enemy("Grand Regeant Frederick", 300, 35, 50);
         core.Battle(Frederick);
 
         dialogueWriter("\nFrederick fades into the mist. \"The descent is complete. You have mastered the Infinite.\"", 80);
@@ -357,7 +356,7 @@ public class WorldController {
         case "B":
             dialogueWriter("DESERTER: \"I didn't survive Omcmize to be pushed around by you.\"", textDelay);
             dialogueWriter("He grabs a forge pick and lunges.", textDelay);
-            core.Battle(new Monster("Forge Deserter", 55, 8, 13));
+            core.Battle(new Enemy("Forge Deserter", 55, 8, 13));
             if (core.getCurrentCharacter().isAlive()) {
                 dialogueWriter("DESERTER: \"...fine. His left guard drops after the third hit. Happy now?\"", textDelay);
             }

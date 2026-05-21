@@ -1,7 +1,7 @@
 package Enemies;
 import java.util.Random;
 
-public abstract class Enemy{
+public class Enemy{
     private Random rand = new Random();
     private String name;
     private int hp;
