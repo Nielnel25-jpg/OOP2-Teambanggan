@@ -174,7 +174,7 @@ public class WorldController {
         core.Battle(guard);
 
         dialogueWriter("\nPast the gate, Milarion waits, his bow aimed at the darkness.", textDelay);
-        dialogueWriter("═══ The Milarion joins your party! ═══", textDelay);
+        dialogueWriter("═══ Milarion joins your party! ═══", textDelay);
         core.getParty().add(new Milarion());
     }
 
@@ -204,10 +204,10 @@ public class WorldController {
         } while(!r);
 
         dialogueWriter("\nIn the heart of the forge, you find a Dragonborn warrior encased in cursed obsidian.", textDelay);
-        dialogueWriter("Lord Uganggar, the Forge-Master, stands between you and the prisoner.", textDelay);
+        dialogueWriter("Lord Omcmize, the Forge-Master, stands between you and the prisoner.", textDelay);
 
-        Enemy uganggar = new Monster("Lord Uganggar", 200, 20, 35);
-        core.Battle(uganggar);
+        Enemy Omcmize = new Monster("Lord Omcmize", 200, 20, 35);
+        core.Battle(Omcmize);
 
         dialogueWriter("\nThe obsidian shatters. The Dragonborn breathes deep the scorching air.", textDelay);
         dialogueWriter("=== The Dragonborn joins your party! ===", textDelay);
@@ -304,13 +304,13 @@ public class WorldController {
         dialogueWriter("Its form unravels slowly, thread by thread, like smoke in rising water.", textDelay);
         dialogueWriter("The hallway beyond it glows with a cold, blue light.", textDelay);
     }
-        dialogueWriter("\nThe final chamber glows with a cold, blue light. Khairos, the Grand Architect, awaits.", textDelay);
-        dialogueWriter("Khairos: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
+        dialogueWriter("\nThe final chamber glows with a cold, blue light. Frederick, the Grand Regeant, awaits.", textDelay);
+        dialogueWriter("Frederick: \"Your journey ends here. Let us see if your resolve can withstand the pressure.\"", textDelay);
 
-        Enemy khairos = new Monster("Grand Architect Khairos", 300, 35, 50);
-        core.Battle(khairos);
+        Enemy Frederick = new Monster("Grand Regeant Frederick", 300, 35, 50);
+        core.Battle(Frederick);
 
-        dialogueWriter("\nKhairos fades into the mist. \"The descent is complete. You have mastered the Infinite.\"", 80);
+        dialogueWriter("\nFrederick fades into the mist. \"The descent is complete. You have mastered the Infinite.\"", 80);
     }
 
     public void dialogueWriter(String text, int delay) {
@@ -332,8 +332,8 @@ public class WorldController {
     deserterSeen = true;
  
     dialogueWriter("\nA figure crouches behind a collapsed forge wall.", textDelay);
-    dialogueWriter("He wears Uganggar's insignia — cracked and scorched.", textDelay);
-    dialogueWriter("DESERTER: \"I'm not your enemy. I left Uganggar's guard three days ago.\"", textDelay);
+    dialogueWriter("He wears Omcmize's insignia — cracked and scorched.", textDelay);
+    dialogueWriter("DESERTER: \"I'm not your enemy. I left Omcmize's guard three days ago.\"", textDelay);
     dialogueWriter("DESERTER: \"I know how he fights. That's worth something, isn't it?\"", textDelay);
  
     System.out.println("\n[A] Bribe him (PHP 80)");
@@ -352,7 +352,7 @@ public class WorldController {
             }
             active.useGold(80.0);
             dialogueWriter("He pockets the coin.", textDelay);
-            dialogueWriter("DESERTER: \"Uganggar's left guard drops after his third hit. Every time. Use it.\"", textDelay);
+            dialogueWriter("DESERTER: \"Omcmize's left guard drops after his third hit. Every time. Use it.\"", textDelay);
             dialogueWriter("He tosses you a forge salve before disappearing into the dark.", textDelay);
             for (Characters.Character c : core.getParty()) {
                 if (c.isAlive()) { c.heal(30); c.addEnergy(20); }
@@ -361,7 +361,7 @@ public class WorldController {
             break;
  
         case "B":
-            dialogueWriter("DESERTER: \"I didn't survive Uganggar to be pushed around by you.\"", textDelay);
+            dialogueWriter("DESERTER: \"I didn't survive Omcmize to be pushed around by you.\"", textDelay);
             dialogueWriter("He grabs a forge pick and lunges.", textDelay);
             core.Battle(new Monster("Forge Deserter", 55, 8, 13));
             if (core.getCurrentCharacter().isAlive()) {
