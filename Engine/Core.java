@@ -228,39 +228,27 @@ public class Core {
                     turnComplete = true;
                     break;
                 case 1:
-                    if (c.getCurrentEnergy() < 30) System.out.println("Not enough energy!");
-                    else { 
-                        c.useSkill1(enemy); 
-                        if(c.getSkill1CD() > beforeSkill1CD){
-                            turnComplete = true;
-                        }
+                    c.useSkill1(enemy); 
+                    if(c.getSkill1CD() > beforeSkill1CD){
+                        turnComplete = true;
                     }
                     break;
                 case 2:
-                    if (c.getCurrentEnergy() < 20) System.out.println("Not enough energy!");
-                    else { 
-                        c.useSkill2(enemy);
-                        if(c.getSkill2CD() > beforeSkill2CD){
-                            turnComplete = true;    
-                        }
+                    c.useSkill2(enemy);
+                    if(c.getSkill2CD() > beforeSkill2CD){
+                        turnComplete = true;    
                     }
                     break;
                 case 3:
-                    if (c.getCurrentEnergy() < 20) System.out.println("Not enough energy!");
-                    else { 
-                        c.useSkill3(enemy); 
-                        if(c.getSkill3CD() > beforeSkill3CD){
-                            turnComplete = true;
-                        }
+                    c.useSkill3(enemy); 
+                    if(c.getSkill3CD() > beforeSkill3CD){
+                        turnComplete = true;
                     }
                     break;
                 case 4:
-                    if (c.getCurrentEnergy() < 50) System.out.println("Not enough energy!");
-                    else { 
-                        c.useUltimate(enemy);
-                        if(c.getUltimate() > beforeUltimateCD){
-                            turnComplete = true;
-                        }
+                    c.useUltimate(enemy);
+                    if(c.getUltimate() > beforeUltimateCD){
+                        turnComplete = true;
                     }
                 case 5:
                     c.showStats();
