@@ -4,7 +4,7 @@ import Enemies.Enemy;
 public class Milarion extends Character {
 
     public Milarion(){
-        super("Milarion", 250, 70, 5, 1, 0, 10, 0, 0, 0);
+        super("Milarion", 250, 70, 5, 1, 0, 10, 0, 0, 0, 0);
     }
 
     @Override
@@ -14,7 +14,7 @@ public class Milarion extends Character {
     System.out.println("1. Skill 1(yearner): Max Damage: " + (getAttack() + 10) + " | Energy cost: 30 | Cooldown 2 rounds");
     System.out.println("2. SKill 2(whycantbeme?): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
     System.out.println("3. Skill 3(kabalomasakitan): Max Damage: " + (getAttack() + 20) + " | Energy cost: 20 | Cooldown 3 rounds");
-    System.out.println("4. Ultimate(DropOut): Max Damage: " + (getAttack() + 50) + " | Energy cost: 50 | Cooldown 4 rounds");
+    System.out.println("4. Ultimate(DropOut): Max Damage: " + (getAttack() + 50) + " | Energy cost: 50 | Cooldown 5 rounds");
     System.out.println();
     }
 
