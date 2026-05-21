@@ -17,7 +17,7 @@ public class Core {
 
     public Core() {
         party = new ArrayList<>();
-        party.add(new Lloyareth());
+        //party.add(new Lloyareth());
     }
 
     public ArrayList<Character> getParty(){
@@ -245,6 +245,7 @@ public class Core {
                     if(c.getUltimate() > beforeUltimateCD){
                         turnComplete = true;
                     }
+                    break;
                 case 5:
                     c.showStats();
                     break;
@@ -253,7 +254,7 @@ public class Core {
                     break;
                 case 7:
                     switchCharacter();
-                    turnComplete = false; // costs a turn
+                    turnComplete = true; // costs a turn
                     break;
                 default:
                     System.out.println("Invalid choice.");

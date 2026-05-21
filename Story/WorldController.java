@@ -140,6 +140,7 @@ public class WorldController {
     private void world1() {
         currentWorld = 1;
         dialogueWriter("=== FLOOR 1: THE SUNLESS OVERGROWTH ===", textDelay);
+        dialogueWriter(pw.printWorld1();, textDelay);
         dialogueWriter("Lloyareth tightens his leather armor as the damp air of the Sunless Overgrowth fills his lungs.", textDelay);
         dialogueWriter("Remnants of a forgotten age twist around him. Only steel on stone will guide the way.", textDelay);
 
