@@ -1,6 +1,5 @@
 package Characters;
 import Enemies.Enemy;
-import java.io.*;
 
 public class Lloyareth extends Character{
 
@@ -24,7 +23,7 @@ public class Lloyareth extends Character{
     public void useBasic(Enemy enemy) {
         int dmg = getAttack();
         addEnergy(30);
-        System.out.println(getName() + " used basic getAttack()");
+        System.out.println(getName() + " used basic attack");
         enemy.takeDamage(dmg); 
     }
 

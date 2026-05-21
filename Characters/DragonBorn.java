@@ -23,7 +23,7 @@ public class DragonBorn extends Character{
     public void useBasic(Enemy enemy) {
         int dmg = getAttack();
         addEnergy(30);
-        System.out.println(getName() + " used basic getAttack()");
+        System.out.println(getName() + " used basic attack");
         enemy.takeDamage(dmg); 
     }
 
