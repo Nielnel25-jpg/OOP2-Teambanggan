@@ -235,6 +235,7 @@ public abstract class Character {
         if (skill1CD > 0) skill1CD--;
         if (skill2CD > 0) skill2CD--;
         if (skill3CD > 0) skill3CD--;
+        if (ultimate > 0) ultimate--;
     }
 
     

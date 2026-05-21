@@ -203,10 +203,10 @@ public class Core {
             System.out.println("╚══════════════════════════════════════════════════════╝");
             c.displaySkills();
 
-            System.out.println("4. Check Stats");
-            System.out.println("5. Check Inventory");
-            System.out.println("6. Switch Character");
-            System.out.print("Choose action (0-6): ");
+            System.out.println("5. Check Stats");
+            System.out.println("6. Check Inventory");
+            System.out.println("7. Switch Character");
+            System.out.print("Choose action (0-7): ");
 
             int choice = -1;
             try {
@@ -220,6 +220,7 @@ public class Core {
             int beforeSkill1CD = c.getSkill1CD();
             int beforeSkill2CD = c.getSkill2CD();
             int beforeSkill3CD = c.getSkill3CD();
+            int beforeUltimateCD = c.getUltimate();
 
             switch (choice) {
                 case 0:
@@ -254,12 +255,20 @@ public class Core {
                     }
                     break;
                 case 4:
+                    if (c.getCurrentEnergy() < 50) System.out.println("Not enough energy!");
+                    else { 
+                        c.useUltimate(enemy);
+                        if(c.getUltimate() > beforeUltimateCD){
+                            turnComplete = true;
+                        }
+                    }
+                case 5:
                     c.showStats();
                     break;
-                case 5:
+                case 6:
                     showInventory(c);
                     break;
-                case 6:
+                case 7:
                     switchCharacter();
                     turnComplete = false; // costs a turn
                     break;
@@ -312,6 +321,7 @@ public class Core {
         System.out.println("  [1] Tanggo - " + c.getTanggo());
         System.out.println("  [2] Bottle - " + c.getBottle());
         System.out.println("  [3] Clarity - " + c.getClarity());
+        System.out.println("  [4] Healing Salve - " + c.getHealingSalve());
         System.out.println("  [U] Use Item");
         System.out.println("  [E] Exit");
         System.out.println("╚══════════════════════════════════════════════════════╝");
@@ -327,6 +337,7 @@ public class Core {
         System.out.println("  [1] Tanggo (+20 HP)");
         System.out.println("  [2] Bottle (+30 HP)");
         System.out.println("  [3] Clarity (+15 Energy)");
+        System.out.println("  [4] Healing Salve (+50 HP)");
         System.out.println("╚══════════════════════════════════════════════════════╝");
         System.out.print(" > Choose an option: ");
 
@@ -336,6 +347,7 @@ public class Core {
         if (choice == 1 && c.getTanggo() > 0) c.useTanggo();
         else if (choice == 2 && c.getBottle() > 0) c.useBottle();
         else if (choice == 3 && c.getClarity() > 0) c.useClarity();
+        else if (choice == 4 && c.getHealingSalve() > 0) c.useHealingSalve();
         else System.out.println("Not enough of that item!");
     }
 
@@ -346,6 +358,7 @@ public class Core {
         int tanggoPrice = 80;
         int bottlePrice = 125;
         int clarityPrice = 85;
+        int healingSalvePrice = 130;
 
         System.out.println("MYSTIC PEDDLER: \"Ah, traveler! Care to browse my wares?\"");
 
@@ -356,6 +369,7 @@ public class Core {
         System.out.println("  [1] Tanggo - $ " + tanggoPrice);
         System.out.println("  [2] Bottle - $ " +  bottlePrice);
         System.out.println("  [3] Clarity - $ " + clarityPrice);
+        System.out.println("  [4] Clarity - $ " + clarityPrice);
         System.out.println("  [0] Exit Store");
         System.out.println("╚══════════════════════════════════════════════════════╝");
         
@@ -363,7 +377,7 @@ public class Core {
         System.out.print(" > Choose an option: ");
         try { choice = Integer.parseInt(sc.nextLine()); } catch (Exception e) { return; }
         if (choice == 0) {
-            System.out.println("MYSITC PEDDLER: \"Until our paths cross again...\"");
+            System.out.println("MYSTIC PEDDLER: \"Until our paths cross again...\"");
             return;
         };
 
@@ -375,11 +389,13 @@ public class Core {
         if (choice == 1) price = tanggoPrice * quantity;
         else if (choice == 2) price = bottlePrice * quantity;
         else if (choice == 3) price = clarityPrice * quantity;
+        else if (choice == 4) price = healingSalvePrice * quantity;
 
         if (c.getGold() >= price) {
             if (choice == 1) c.addTanggo(quantity);
             else if (choice == 2) c.addBottle(quantity);
             else if (choice == 3) c.addClarity(quantity);
+            else if (choice == 4) c.addHealingSalve(quantity);
             c.useGold(price);
             System.out.println("MYSTIC PEDDLER: \"Pleasure doing business with you.\"");
         } else {
