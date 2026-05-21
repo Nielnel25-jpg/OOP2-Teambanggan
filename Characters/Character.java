@@ -1,9 +1,7 @@
 package Characters;
-import java.util.Random;
-
 import Enemies.Enemy;
-
 import java.text.DecimalFormat;
+import java.util.Random;
 
 public abstract class Character {
     Random rand = new Random();
@@ -84,6 +82,7 @@ public abstract class Character {
         currentHp = maxHp;
         attack += 5;
         System.out.println(getName() + " Leveled up!");
+        maxEnergy = Math.min(100, maxEnergy + 10);
         currentEnergy = maxEnergy;
         exp -= 50;
     }

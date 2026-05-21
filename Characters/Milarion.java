@@ -22,7 +22,7 @@ public class Milarion extends Character {
     public void useBasic(Enemy enemy) {
         int dmg = getAttack();
         addEnergy(30);
-        System.out.println(getName() + "used basic attack");
+        System.out.println(getName() + " used basic attack");
         enemy.takeDamage(dmg);
     }
 
