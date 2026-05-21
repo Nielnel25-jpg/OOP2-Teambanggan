@@ -2,13 +2,6 @@ package Story;
 
 public class BackGround {
 
-    public static final String RESET = "\u001B[0m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String CYAN = "\u001B[36m";
-
     private WorldController control;
 
     public BackGround(WorldController control) {
@@ -16,19 +9,19 @@ public class BackGround {
     }
 
     public void gameDisplay() {
-        System.out.println("\n"+ RED);
-        System.out.println("                        \t██████╗ ██╗   ██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ███╗   ██╗" + RED);
-        System.out.println("                        \t██╔══██╗██║   ██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗████╗  ██║" + RED);
-        System.out.println("                        \t██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║" + RED);
-        System.out.println("                        \t██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║" + RED);
-        System.out.println("                        \t██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║" + RED);
-        System.out.println("                        \t╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝" + RED);
-        System.out.println("                                           \t██████╗ ██╗   ██╗███████╗███████╗████████╗" + RED);
-        System.out.println("                                           \t██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝" + RED);
-        System.out.println("                                           \t██║   ██║██║   ██║█████╗  ███████╗   ██║   " + RED);
-        System.out.println("                                           \t██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   " + RED);
-        System.out.println("                                           \t╚██████╔╝╚██████╔╝███████╗███████║   ██║   " + RED);
-        System.out.println("                                             \t ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   " + RED);
+        System.out.println("\n");
+        System.out.println("                        \t██████╗ ██╗   ██╗███╗   ██╗ ██████╗ ███████╗ ██████╗ ███╗   ██╗" );
+        System.out.println("                        \t██╔══██╗██║   ██║████╗  ██║██╔════╝ ██╔════╝██╔═══██╗████╗  ██║" );
+        System.out.println("                        \t██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║" );
+        System.out.println("                        \t██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║" );
+        System.out.println("                        \t██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║" );
+        System.out.println("                        \t╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝" );
+        System.out.println("                                           \t██████╗ ██╗   ██╗███████╗███████╗████████╗" );
+        System.out.println("                                           \t██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝" );
+        System.out.println("                                           \t██║   ██║██║   ██║█████╗  ███████╗   ██║   " );
+        System.out.println("                                           \t██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   " );
+        System.out.println("                                           \t╚██████╔╝╚██████╔╝███████╗███████║   ██║   " );
+        System.out.println("                                              ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝ ");
         System.out.println();
     }
 
@@ -42,22 +35,22 @@ public class BackGround {
 
 
     public void Lloyareth() {
-        control.dialogueWriter("Lloyareth, a strong and determined individual, he knows pain and suffering.", 40);
-        control.dialogueWriter("He likes challenges and is always up for a good fight.", 40);
-        control.dialogueWriter("Deep inside, Drow has something others don't, the ability to endure.", 40);
+        control.dialogueWriter("Lloyareth, a strong and determined individual, he knows pain and suffering."  , 40);
+        control.dialogueWriter("He likes challenges and is always up for a good fight." , 40);
+        control.dialogueWriter("Deep inside, Drow has something others don't, the ability to endure." , 40);
     }
 
    
     public void Milarion() {
-        control.dialogueWriter("Milarion is the definition of chill and hardworking, he knows when to get serious and when to relax.", 40);
-        control.dialogueWriter("He likes to listen to music and enjoy the simple things in life.", 40);
-        control.dialogueWriter("He was given the alias \"kabalomasakitan\" by his tribe.", 40);
+        control.dialogueWriter("Milarion is the definition of chill and hardworking, he knows when to get serious and when to relax." , 40);
+        control.dialogueWriter("He likes to listen to music and enjoy the simple things in life." , 40);
+        control.dialogueWriter("He was given the alias \"kabalomasakitan\" by his tribe." , 40);
     }
 
     
     public void DragonBorn() {
-        control.dialogueWriter("DragonBorn, a quiet and relaxed individual.", 40);
-        control.dialogueWriter("He likes to laze around and do nothing, often spends his time sleeping.", 40);
+        control.dialogueWriter("DragonBorn, a quiet and relaxed individual."  , 40);
+        control.dialogueWriter("He likes to laze around and do nothing, often spends his time sleeping." , 40);
         control.dialogueWriter("But make no mistake, when it's time to fight, he won't hesitate.", 40);
     }
     

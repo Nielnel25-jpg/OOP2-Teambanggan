@@ -33,7 +33,7 @@ public abstract class Character {
     private int skill3CD;
     private int ultimate;
 
-    public Character(String name, int hp, int energy, int attack, int level, int exp, double gold, int skill1CD, int skill2CD, int skill3CD) {
+    public Character(String name, int hp, int energy, int attack, int level, int exp, double gold, int skill1CD, int skill2CD, int skill3CD, int ultimate) {
         this.name = name;
         this.currentHp = hp;
         this.maxHp = hp;
