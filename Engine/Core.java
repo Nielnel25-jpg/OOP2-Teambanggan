@@ -3,7 +3,6 @@ package Engine;
 import Characters.Character;
 import Characters.Lloyareth;
 import Enemies.Enemy;
-import Enemies.Monster;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -35,7 +34,7 @@ public class Core {
 
         int chance = rand.nextInt(100);
         if (chance < 60) { // 60% chance encounter
-            Enemy enemy = new Monster();
+            Enemy enemy = new Enemy("Dungeon Creature", 50, 7, 15);
             System.out.println("A wild " + enemy.getName() + " appeared!");
             boolean won = Battle(enemy);
 

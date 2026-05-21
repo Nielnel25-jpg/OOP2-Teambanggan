@@ -71,13 +71,13 @@ public class Lloyareth extends Character{
             System.out.println("Skill on cooldown! Wait " + getSkill3CD() + " turn(s).");
             return;
         }
-        if(getCurrentEnergy() < 20){
+        if(getCurrentEnergy() < 40){
             System.out.println("Not enough energy!"); 
             return;
         }
 
         int dmg = rand.nextInt(30 - 20 + 1) + 20;
-        setCurrentEnergy(getCurrentEnergy() - 20);
+        setCurrentEnergy(getCurrentEnergy() - 40);
         System.out.println(getName() + " used Markmanship! Damage is " + dmg);
         enemy.takeDamage(dmg);
 
