@@ -38,9 +38,10 @@ public class Milarion extends Character {
         }
 
         int dmg = rand.nextInt(6) + 5;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 30);
-        System.out.println(getName() + " used yearner. Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used yearner. Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill1CD(2);
     }
@@ -57,9 +58,10 @@ public class Milarion extends Character {
         }
 
         int dmg = rand.nextInt(6) + 5;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used whycantbeme?! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used whycantbeme?! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill2CD(3);
     }
@@ -76,9 +78,10 @@ public class Milarion extends Character {
         }
 
         int dmg = rand.nextInt(6) + 5;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used kabalomasakitan! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used kabalomasakitan! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill3CD(3);
     }
