@@ -139,6 +139,8 @@ public class WorldController {
 
     private void world1() {
         currentWorld = 1;
+        pw.printWorld1();
+        System.out.println();
         dialogueWriter("=== FLOOR 1: THE SUNLESS OVERGROWTH ===", textDelay);
         dialogueWriter("Lloyareth tightens his leather armor as the damp air of the Sunless Overgrowth fills his lungs.", textDelay);
         dialogueWriter("Remnants of a forgotten age twist around him. Only steel on stone will guide the way.", textDelay);
@@ -173,6 +175,8 @@ public class WorldController {
 
     private void world2() { 
         currentWorld = 2;
+        pw.printWorld2();
+        System.out.println();
         dialogueWriter("\n=== FLOOR 2: THE OBSIDIAN WASTES ===", textDelay);
         dialogueWriter("Heat shimmers off the glass-like walls. The air is thick with sulfur.", textDelay);
         dialogueWriter("Every footstep echoes in the hollow forge of the ancestors.", textDelay);
@@ -209,6 +213,8 @@ public class WorldController {
 
     private void world3() {
         currentWorld = 3;
+        pw.printWorld3();
+        System.out.println();
         dialogueWriter("\n=== FLOOR 3: THE ABYSSAL TIDES ===", textDelay);
         dialogueWriter("The fellowship enters the drowned floors. The silence is crushing.", textDelay);
 
