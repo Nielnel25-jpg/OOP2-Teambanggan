@@ -39,9 +39,10 @@ public class DragonBorn extends Character{
         }
 
         int dmg = rand.nextInt(15 - 10 + 1) + 10;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 30);
-        System.out.println(getName() + " used Sleep! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used Sleep! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill1CD(2);
     }
@@ -58,9 +59,10 @@ public class DragonBorn extends Character{
         }
 
         int dmg = rand.nextInt(20 - 15 + 1) + 15;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used Bite! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used Bite! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill2CD(3);
     }
@@ -77,9 +79,10 @@ public class DragonBorn extends Character{
         }
 
         int dmg = rand.nextInt(30 - 20 + 1) + 20;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used Slash! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used Slash! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill3CD(3);
     }

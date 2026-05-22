@@ -39,9 +39,10 @@ public class Lloyareth extends Character{
         }
 
         int dmg = rand.nextInt(10 - 5 + 1) + 5;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 30);
-        System.out.println(getName() + " used ArayMoPakak! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used ArayMoPakak! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill1CD(2); // pila ang cooldown sa skill
     }
@@ -58,9 +59,10 @@ public class Lloyareth extends Character{
         }
 
         int dmg = rand.nextInt(20 - 15 + 1) + 15;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 20);
-        System.out.println(getName() + " used NakoPo! Damage is " + dmg);
-        enemy.takeDamage(dmg + getAttack());
+        System.out.println(getName() + " used NakoPo! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill2CD(3); // pila ang cooldown sa skill
     }
@@ -77,9 +79,10 @@ public class Lloyareth extends Character{
         }
 
         int dmg = rand.nextInt(30 - 20 + 1) + 20;
+        int sdmg = dmg + getAttack();
         setCurrentEnergy(getCurrentEnergy() - 40);
-        System.out.println(getName() + " used Markmanship! Damage is " + dmg);
-        enemy.takeDamage(dmg);
+        System.out.println(getName() + " used Markmanship! Damage is " + sdmg);
+        enemy.takeDamage(sdmg);
 
         setSKill3CD(3); // pila ang cooldown sa skill
     }
